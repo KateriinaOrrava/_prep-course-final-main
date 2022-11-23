@@ -20,12 +20,15 @@ describe("Tic-Tac-Toe", () => {
     expect(game.isTie()).toBe(false);
   });
   //parbaudam vai uzklikšķinot pirmo reizi uz laukuma, tiek uzlikts X
+  //***************************************************
   it("should place X on click", () => {
     //pirms veikt katru testu izveido jaunu spēli
+    //iedod spēlei sākotnejo stāvokli
     const game = new Game();
 
+    game.onClick(0);
     expect(game.getCells()).toEqual([
-      "-",
+      "X",
       "-",
       "-",
       "-",
@@ -35,7 +38,7 @@ describe("Tic-Tac-Toe", () => {
       "-",
       "-",
     ]);
-    expect(game.getTurn()).toBe("X");
+    //expect(game.getTurn()).toBe("X");
     expect(game.getWinner()).toBe("-");
     expect(game.isTie()).toBe(false);
   });
